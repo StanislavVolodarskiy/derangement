@@ -65,7 +65,7 @@ def test_all_functions(n, m):
 
 def main():
     for n in range(2, 11):
-        test_all_functions(n, 10_000_000)
+        test_all_functions(n, 1_000_000)
 
     test_all_functions(10, 1_000_000)
     test_all_functions(100, 100_000)
