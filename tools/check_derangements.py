@@ -58,9 +58,30 @@ def test_function(n, k, label, f):
 
 def test_all_functions(n, m):
     print('n =', n, 'm =', m)
-    test_function(n, m, 'derangement ', derangement.derangement)
-    test_function(n, m, 'FisherYates1', derangement.derangementFisherYates1)
-    test_function(n, m, 'FisherYates2', derangement.derangementFisherYates2)
+    test_function(
+        n,
+        m,
+        'MartinezPanholzerProdinger1',
+        derangement.derangementMartinezPanholzerProdinger1
+    )
+    test_function(
+        n,
+        m,
+        'MartinezPanholzerProdinger2',
+        derangement.derangementMartinezPanholzerProdinger2
+    )
+    test_function(
+        n,
+        m,
+        'FisherYates1               ',
+        derangement.derangementFisherYates1
+    )
+    test_function(
+        n,
+        m,
+        'FisherYates2               ',
+        derangement.derangementFisherYates2
+    )
 
 
 def main():

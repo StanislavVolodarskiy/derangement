@@ -1,4 +1,12 @@
 from .derangement import \
-        derangement, derangementFisherYates1, derangementFisherYates2
+    derangementMartinezPanholzerProdinger1, \
+    derangementMartinezPanholzerProdinger2, \
+    derangementFisherYates1, \
+    derangementFisherYates2
 
-__all__ = ['derangement', 'derangementFisherYates1', 'derangementFisherYates2']
+__all__ = [
+    'derangementMartinezPanholzerProdinger1',
+    'derangementMartinezPanholzerProdinger2',
+    'derangementFisherYates1',
+    'derangementFisherYates2'
+]

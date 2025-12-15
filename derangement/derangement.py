@@ -50,14 +50,33 @@ def prob(u):
     return 1 / (u + 1)
 
 
-def derangement(n, r=random):
+def derangementMartinezPanholzerProdinger1(n, r=random):
+    a = list(range(n))
+    mark = [False] * n
+    i = n - 1
+    u = n - 1
+    while u >= 1:
+        if not mark[i]:
+            while True:
+                j = r.randrange(i)
+                if not mark[j]:
+                    break
+            a[i], a[j] = a[j], a[i]
+            if r.random() < prob(u):
+                mark[j] = True
+                u -= 1
+            u -= 1
+        i -= 1
+    return a
+
+
+def derangementMartinezPanholzerProdinger2(n, r=random):
     a = list(range(n))  # derangement
     x = list(range(n))  # marked if x[i] == -1
     y = list(range(n))  # unmarked xs to choose
 
     i = n - 1
-    u = n - 1
-    while u >= 1:
+    while len(y) > 1:
         if x[i] >= 0:
 
             # mark x[i]
@@ -68,7 +87,8 @@ def derangement(n, r=random):
 
             j = r.choice(y)
             a[i], a[j] = a[j], a[i]
-            if r.random() < prob(u):
+
+            if r.random() < prob(len(y)):
 
                 # mark x[j]
                 x[y[-1]] = x[j]
@@ -76,7 +96,5 @@ def derangement(n, r=random):
                 x[j] = -1
                 y.pop()
 
-                u -= 1
-            u -= 1
         i -= 1
     return a
